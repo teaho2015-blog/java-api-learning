@@ -8,7 +8,9 @@
     "ga",
     "plantuml",
     "advanced-emoji",
-    "page-treeview"
+    "back-to-top-button",
+    "page-toc-button",
+    "-lunr", "-search", "search-plus"
   ],
   "pluginsConfig": {
     "include-codeblock": {
