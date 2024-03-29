@@ -74,7 +74,7 @@ public static final int value = 123;
 ![ ClassLoader_hierarchy ](ClassLoader_hierarchy.png)
 
 可从如下代码验证：
-[include:10-](../../javacode/src/main/java/com/tea/lang/classloader/ShowClassLoadersMain.java)
+[include:10-](../../javacode/jdk/src/main/java/com/tea/lang/classloader/ShowClassLoadersMain.java)
 输出是：
 ~~~
 sun.misc.Launcher$AppClassLoader@18b4aac2

@@ -27,7 +27,7 @@ Monitor是 Java中用以实现线程之间的互斥与协作的主要手段。
 恩，以上说的可能有点抽象，我们可以想办法近距离观察下monitor的存在。
 
 这是一个含有`synchronized`块的代码：
-[include:7-](../../javacode/src/main/java/com/tea/lang/monitor/Monitor.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/lang/monitor/Monitor.java)
 
 [include:1-](Monitor.class.txt)
 关注下这两行
