@@ -36,7 +36,7 @@ StackOverflowError是一个VirtualMachineError，Error类及其子孙描述了Ja
 
 参考自[《thinking in Java》<sup>[2]<sup>](#references)。
 
-[include:7-](../../javacode/src/main/java/com/tea/stackoverflow/Demo2Main.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/stackoverflow/Demo2Main.java)
 
 运行代码会报如下错误：
 

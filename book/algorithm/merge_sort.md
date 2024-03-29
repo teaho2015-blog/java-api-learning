@@ -8,14 +8,14 @@
 
 递归实现的归并排序是算法设计中分治思想的典型应用。
 
-[include:2-](../../javacode/src/main/java/com/tea/java/algorithm/mergesort/MergeSort1.java)
+[include:2-](../../javacode/jdk/src/main/java/com/tea/java/algorithm/mergesort/MergeSort1.java)
 
 
 ## 自底向上的归并排序
 
 自底向上的实现是通过迭代实现。
 
-[include:2-](../../javacode/src/main/java/com/tea/java/algorithm/mergesort/MergeSort2.java)
+[include:2-](../../javacode/jdk/src/main/java/com/tea/java/algorithm/mergesort/MergeSort2.java)
 
 
 ## 排序算法的复杂度

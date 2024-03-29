@@ -9,7 +9,7 @@ String是字符串常量，java.lang.String是一个不可变类。
 java7加入了新的语法特性，使得switch语法能够将String作为判断条件。
 
 例如：
-[include:7-](../../javacode/src/main/java/com/tea/lang/string/SwitchStringMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/lang/string/SwitchStringMain.java)
 可将如上代码反编译可得如下(class文件为java8)：
 [include:8-](SwitchStringMain.class.txt)
 
@@ -23,7 +23,7 @@ java7加入了新的语法特性，使得switch语法能够将String作为判断
 > 用于String的“+”与“+=”是Java中仅有的两个重载过的操作符。[[1]](#references)
 
 具体可参看如下代码及其反编译结果：
-[include:7-](../../javacode/src/main/java/com/tea/lang/string/StringPlusMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/lang/string/StringPlusMain.java)
 
 [include:8-](StringPlusMain.class.txt)
 
@@ -31,7 +31,7 @@ java7加入了新的语法特性，使得switch语法能够将String作为判断
 
 不过,这里有个小坑。
 看如下：
-[include:7-](../../javacode/src/main/java/com/tea/lang/string/WhitherStringBuilderMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/lang/string/WhitherStringBuilderMain.java)
 使用javap -c 命令可得如下
 [include:8-](WhitherStringBuilderMain.class.javap.txt)
 
@@ -182,7 +182,7 @@ oop constantPoolOopDesc::string_at_impl(constantPoolHandle this_oop, int which, 
 于是，我在stackoverflow上提了个问题，得出答案：[ [10]stackoverflow | the timing of String Literal loaded into StringTable in Java HotSpot vm][link: stackoverflow | the timing of String Literal loaded into StringTable in Java HotSpot vm]
 
 由如下代码块可知，HotSpot VM是Lazy resolve，且String Literal（字符串字面量）是Lazy resolve（注，我的讨论base在Java8）。
-[include:7-](../../javacode/src/main/java/com/tea/lang/string/LazyResolveTestMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/lang/string/LazyResolveTestMain.java)
 
 PS.同时发现了一个网页运行代码的好工具[ideone](http://ideone.com/FrIAOX)。
 
@@ -192,7 +192,7 @@ PS.同时发现了一个网页运行代码的好工具[ideone](http://ideone.com
 不存在则将该字符串引用塞进StringTable，并返回其引用。
 
 （注：Java6及以下版本并不是将引用塞进StringTable。具体看如下代码和文章[美团点评技术团队 | 深入解析String#intern](https://tech.meituan.com/in_depth_understanding_string_intern.html)）
-[include:7-](../../javacode/src/main/java/com/tea/lang/string/StringInternTestMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/lang/string/StringInternTestMain.java)
 
 
 
@@ -211,7 +211,7 @@ java7后 默认为`60013`
 #### 其他
 
 对了，有几个测试可玩下，猜下输出：
-[include:7-](../../javacode/src/main/java/com/tea/lang/string/FinalStringMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/lang/string/FinalStringMain.java)
 
 至于为什么，答案在如下3个链接中：
 [3.10.5. String Literals](http://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-StringLiteral)

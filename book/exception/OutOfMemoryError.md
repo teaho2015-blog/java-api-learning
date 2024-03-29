@@ -91,7 +91,7 @@ IBM HeapAnalyzer等工具的架构师和开发者所写。[Unveiling the java.la
 
 ### Requested array size exceeds VM limit
 
-[include:7-](../../javacode/src/main/java/com/tea/outofmemory/RequestedArraySizeExceedsVMLimitMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/outofmemory/RequestedArraySizeExceedsVMLimitMain.java)
 
 这是一个较少出现的错误。该错误信息表明，一个数组(动态或静态地)请求过大的内存空间，大到虚拟机不能接受。
 
@@ -100,13 +100,13 @@ IBM HeapAnalyzer等工具的架构师和开发者所写。[Unveiling the java.la
 ### java.lang.OutOfMemoryError: PermGen space
 
 以下代码基于java6。
-[include:7-](../../javacode/src/main/java/com/tea/outofmemory/PermGenSpaceMain.java)
+[include:7-](../../javacode/jdk/src/main/java/com/tea/outofmemory/PermGenSpaceMain.java)
 
 `java.lang.OutOfMemoryError:PermGen space`只出现于Java7或以下版本，一般通过`-XX:MaxPermSize=size`增大永久代去解决错误。
 
 ### java.lang.OutOfMemoryError: Metaspace
 
-[include:6-](../../javacode/src/main/java/com/tea/outofmemory/MetaspaceMain2.java)
+[include:6-](../../javacode/jdk/src/main/java/com/tea/outofmemory/MetaspaceMain2.java)
 
 `java.lang.OutOfMemoryError: Metaspace`。
 Java8使用本地内存存放Metaspace。Metaspace存放了Java类的元数据：类的版本、字段、方法、接口等描述信息。
@@ -132,7 +132,7 @@ Metaspace究竟是啥么，与PermGen又有什么关系，Java6、7、8这3个�
 
 由于JVM在Java的线程创建时，是会创建一条新的本地线程与之对应。所以我试着用如下代码简单生成错误：
 
-[include:6-](../../javacode/src/main/java/com/tea/outofmemory/CannotCreateThreadMain.java)
+[include:6-](../../javacode/jdk/src/main/java/com/tea/outofmemory/CannotCreateThreadMain.java)
 
 我试着运行了三次，但最后电脑都失去响应被迫拉闸重启了。
 
@@ -160,7 +160,7 @@ This exception is typically thrown because the amount of live data barely fits i
 > Action: Increase the heap size. The java.lang.OutOfMemoryError exception for GC Overhead limit exceeded can be turned off with the command line flag -XX:-UseGCOverheadLimit.
 
 代码示例：
-[include:5-](../../javacode/src/main/java/com/tea/outofmemory/GCOverheadLimitExceededMain.java)
+[include:5-](../../javacode/jdk/src/main/java/com/tea/outofmemory/GCOverheadLimitExceededMain.java)
 
 ## references
 

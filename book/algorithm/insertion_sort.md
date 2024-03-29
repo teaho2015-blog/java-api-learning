@@ -29,7 +29,7 @@
 
 ## 自实现
 
-[include:2-](../../javacode/src/main/java/com/tea/java/algorithm/insertionsort/InsertionSort.java)
+[include:2-](../../javacode/jdk/src/main/java/com/tea/java/algorithm/insertionsort/InsertionSort.java)
 
 
 ## references
