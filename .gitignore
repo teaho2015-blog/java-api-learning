@@ -18,3 +18,5 @@ _book
 .idea
 
 package-lock.json
+
+.vscode/
