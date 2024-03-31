@@ -2,7 +2,7 @@
 ## 简介
 
 > 基于guava-31.1-jre
->
+
 本地缓存是非常常用的工具，平常我们常用的还有ConcurrentHashMap、手撸LRUCache和Caffeine、安卓有LRU cache。
 当然还有Guava Cache。Guava Cache是一款常用的本地缓存库，除了缓存数据，额外提供了一些功能。比如
 - LRU移除数据
@@ -314,7 +314,9 @@ return lockedGetOrLoad(key, hash, loader);
 - COLLECTED gc回收
 - EXPIRED 过期
 - SIZE 超过size限制
+
 ## 总结
+
 Guava Local Cache的存储结构可以简单理解为JDK1.6的ConcurrentHashMap，同时它比ConcurrentHashMap 拓展出了很多实用功能，比如监控、高性能加载、缓存回收机制、权重加载、控制缓存数等。
 
 ## Reference
