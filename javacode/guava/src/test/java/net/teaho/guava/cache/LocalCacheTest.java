@@ -4,6 +4,8 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.google.common.collect.Lists;
+
 import org.junit.Test;
 
 import java.time.Instant;
@@ -20,8 +22,97 @@ import java.util.stream.IntStream;
  */
 public class LocalCacheTest {
 
-    private int CACHE_MAXIMUM_SIZE = 200 * 10000;
+    private static final int CACHE_MAXIMUM_SIZE = 10_000;
+    private static final int CACHE_INITIAL_SIZE = 1_000;
     private static final CacheValue<InMemoryItem> emptyCacheValue = new CacheValue<>(null, 0);
+
+    @Test
+    public void testCacheSimpleUsage() throws ExecutionException {
+
+        Cache<CacheKey, CacheValue<InMemoryItem>> cache = CacheBuilder
+            .newBuilder()
+            .maximumSize(10)
+            .expireAfterWrite(60, TimeUnit.SECONDS)
+            .build();
+
+        CacheKey cacheKey = new CacheKey("key", "field");
+        CacheValue<InMemoryItem> item = cache.get(cacheKey, () -> LoadingCacheLoader.loadOne(cacheKey));
+        System.out.println("item:" + item);
+
+        CacheKey cacheKey2 = new CacheKey("key2", "field2");
+        CacheValue<InMemoryItem> item2 = cache.getIfPresent(cacheKey2);
+        System.out.println("item:" + item2);
+
+        System.out.println("items" + cache.getAllPresent(Lists.newArrayList(cacheKey, cacheKey2)));
+
+        cache.invalidate(cacheKey);
+
+    }
+
+    @Test
+    public void testLoadingCacheSimpleUsage() throws ExecutionException {
+
+        LoadingCache<CacheKey, CacheValue<InMemoryItem>> cache = CacheBuilder
+            .newBuilder()
+            .maximumSize(10000)
+            .expireAfterWrite(60, TimeUnit.SECONDS)
+            .build(new LoadingCacheLoader());
+
+
+        CacheKey cacheKey = new CacheKey("key", "field");
+        CacheValue<InMemoryItem> item = cache.get(cacheKey, () -> LoadingCacheLoader.loadOne(cacheKey));
+        System.out.println("item:" + item);
+
+        CacheKey cacheKey2 = new CacheKey("key2", "field2");
+        CacheValue<InMemoryItem> item2 = cache.get(cacheKey2);
+        System.out.println("item:" + item2);
+
+        System.out.println("items" + cache.getAll(Lists.newArrayList(cacheKey, cacheKey2)));
+
+        cache.invalidate(cacheKey);
+
+    }
+
+    @Test
+    public void testCacheGet() {
+        Cache<CacheKey, CacheValue<InMemoryItem>> cache = CacheBuilder
+            .newBuilder()
+            //是否记录localcache状态（命中率、缓存个数、失败个数、异常数），默认开启
+            .recordStats()
+            //最大缓存容量
+            .maximumSize(CACHE_MAXIMUM_SIZE)
+            //初始容量
+            .initialCapacity(CACHE_INITIAL_SIZE)
+            //缓存item被剔除时的监听器，能获取到key、value、剔除原因（手动剔除、过期、gc回收、超过最大item数驱逐）
+            .removalListener(notification -> {
+                System.out.println("key:" + notification.getKey() + ",val:" + notification.getValue() + ", cause" + notification.getCause());
+            })
+            //key写入后的过期时间
+            .expireAfterWrite(30 * 60, TimeUnit.SECONDS)
+            //
+            .concurrencyLevel(100)
+            //设置key为weak key
+            .weakKeys()
+            //设置value为soft引用
+            .softValues()
+            .build();
+
+
+        CacheKey cacheKey = new CacheKey("key", "field");
+        try {
+            CacheValue<InMemoryItem> item = cache.get(cacheKey, new Callable<CacheValue<InMemoryItem>>() {
+                @Override
+                public CacheValue<InMemoryItem> call() throws Exception {
+                    return LoadingCacheLoader.loadOne(cacheKey);
+                }
+            });
+            System.out.println(item.getV().id);
+        } catch (ExecutionException e) {
+            System.out.println("exception" + e.getMessage());
+        }
+
+    }
+
 
     @Test
     public void testCacheLoad() {
@@ -165,7 +256,7 @@ public class LocalCacheTest {
                     map.put(key, emptyCacheValue);
                 }
                 Callable<Map<CacheKey, CacheValue<InMemoryItem>>> batchResCall = () -> itemBatch.stream()
-                    .collect(Collectors.toMap(cacheKey -> cacheKey, this::loadOne));
+                    .collect(Collectors.toMap(cacheKey -> cacheKey, LoadingCacheLoader::loadOne));
                 callList.add(batchResCall);
             }
 
@@ -190,7 +281,7 @@ public class LocalCacheTest {
             return map;
         }
 
-        private CacheValue<InMemoryItem> loadOne(CacheKey cacheKey) {
+        private static CacheValue<InMemoryItem> loadOne(CacheKey cacheKey) {
             String id = String.valueOf(integer.incrementAndGet());
             //            System.out.println("seq:" + id + ", key:" + cacheKey.getKey());
             try {

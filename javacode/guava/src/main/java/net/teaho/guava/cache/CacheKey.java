@@ -11,12 +11,12 @@ import java.util.Objects;
 @AllArgsConstructor
 public class CacheKey {
     private String key;
-    private String hashField;
+    private String field;
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, hashField);
+        return Objects.hash(key, field);
     }
 
     @Override
@@ -24,6 +24,6 @@ public class CacheKey {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CacheKey that = (CacheKey)o;
-        return Objects.equals(key, that.key) && Objects.equals(hashField, that.hashField);
+        return Objects.equals(key, that.key) && Objects.equals(field, that.field);
     }
 }
