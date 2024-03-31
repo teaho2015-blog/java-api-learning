@@ -4,6 +4,8 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.google.common.collect.Lists;
+
 import org.junit.Test;
 
 import java.time.Instant;
@@ -23,6 +25,53 @@ public class LocalCacheTest {
     private static final int CACHE_MAXIMUM_SIZE = 10_000;
     private static final int CACHE_INITIAL_SIZE = 1_000;
     private static final CacheValue<InMemoryItem> emptyCacheValue = new CacheValue<>(null, 0);
+
+    @Test
+    public void testCacheSimpleUsage() throws ExecutionException {
+
+        Cache<CacheKey, CacheValue<InMemoryItem>> cache = CacheBuilder
+            .newBuilder()
+            .maximumSize(10)
+            .expireAfterWrite(60, TimeUnit.SECONDS)
+            .build();
+
+        CacheKey cacheKey = new CacheKey("key", "field");
+        CacheValue<InMemoryItem> item = cache.get(cacheKey, () -> LoadingCacheLoader.loadOne(cacheKey));
+        System.out.println("item:" + item);
+
+        CacheKey cacheKey2 = new CacheKey("key2", "field2");
+        CacheValue<InMemoryItem> item2 = cache.getIfPresent(cacheKey2);
+        System.out.println("item:" + item2);
+
+        System.out.println("items" + cache.getAllPresent(Lists.newArrayList(cacheKey, cacheKey2)));
+
+        cache.invalidate(cacheKey);
+
+    }
+
+    @Test
+    public void testLoadingCacheSimpleUsage() throws ExecutionException {
+
+        LoadingCache<CacheKey, CacheValue<InMemoryItem>> cache = CacheBuilder
+            .newBuilder()
+            .maximumSize(10000)
+            .expireAfterWrite(60, TimeUnit.SECONDS)
+            .build(new LoadingCacheLoader());
+
+
+        CacheKey cacheKey = new CacheKey("key", "field");
+        CacheValue<InMemoryItem> item = cache.get(cacheKey, () -> LoadingCacheLoader.loadOne(cacheKey));
+        System.out.println("item:" + item);
+
+        CacheKey cacheKey2 = new CacheKey("key2", "field2");
+        CacheValue<InMemoryItem> item2 = cache.get(cacheKey2);
+        System.out.println("item:" + item2);
+
+        System.out.println("items" + cache.getAll(Lists.newArrayList(cacheKey, cacheKey2)));
+
+        cache.invalidate(cacheKey);
+
+    }
 
     @Test
     public void testCacheGet() {
