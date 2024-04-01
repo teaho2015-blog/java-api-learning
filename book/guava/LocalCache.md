@@ -97,7 +97,7 @@ Guava Cache的存储结构可以简单理解等同为ConcurrentHashMap（JDK1.6�
 >The concurrent hash map implementation built by CacheBuilder.
 >This implementation is heavily derived from revision 1.96 of ConcurrentHashMap.java .
 
-因为它的实现和文档说明一样，就是高度仿制ConcurrentHashMap（JDK1.6）。接下来我分析下它的初始化和执行。
+核心存储处理类LocalCache的实现和文档说明一样，是高度仿制ConcurrentHashMap（JDK1.6）。接下来我分析下它的初始化和执行。
 
 ### 初始化
 初始化做逐行注释。
@@ -190,15 +190,14 @@ concurrencyLevel = Math.min(builder.getConcurrencyLevel(), MAX_SEGMENTS); // 并
 #### get方法核心逻辑
 
 核心执行栈如下：
-````
-loadFuture:3533, LocalCache$LoadingValueReference (com.google.common.cache)
-loadSync:2282, LocalCache$Segment (com.google.common.cache)
-lockedGetOrLoad:2159, LocalCache$Segment (com.google.common.cache)
-get:2049, LocalCache$Segment (com.google.common.cache)
-get:3966, LocalCache (com.google.common.cache)
-getOrLoad:3989, LocalCache (com.google.common.cache)
-get:4950, LocalCache$LocalLoadingCache (com.google.common.cache)
-````
+>loadFuture:3533, LocalCache$LoadingValueReference (com.google.common.cache)  
+>**loadSync:2282, LocalCache$Segment (com.google.common.cache)**  
+>**lockedGetOrLoad:2159, LocalCache$Segment (com.google.common.cache)**  
+>**get:2049, LocalCache$Segment (com.google.common.cache)**  
+>**get:3966, LocalCache (com.google.common.cache)**  
+>getOrLoad:3989, LocalCache (com.google.common.cache)  
+>get:4950, LocalCache$LocalLoadingCache (com.google.common.cache)  
+
 我重点标注下需要关注看的源码：
 ````
 // LocalCache.get(K key, CacheLoader<? super K, V> loader)方法
