@@ -3,7 +3,7 @@
 
 > 基于guava-31.1-jre
 
-本地缓存是非常常用的工具，平常我们常用的还有ConcurrentHashMap、手撸LRUCache和Caffeine、安卓有LRU cache。
+本地缓存是非常常用的工具，平常我们常用的库有ConcurrentHashMap、手撸LRUCache和Caffeine、安卓有LRU cache。
 当然还有Guava Cache。Guava Cache是一款常用的本地缓存库，除了缓存数据，额外提供了一些功能。比如
 - LRU移除数据
 - 过期机制
