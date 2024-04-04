@@ -199,13 +199,15 @@ concurrencyLevel = Math.min(builder.getConcurrencyLevel(), MAX_SEGMENTS); // 并
 >get:4950, LocalCache$LocalLoadingCache (com.google.common.cache)  
 
 我重点标注下需要关注看的源码：
+
+LocalCache.get(K key, CacheLoader<? super K, V> loader)方法
 ````
-// LocalCache.get(K key, CacheLoader<? super K, V> loader)方法
 return segmentFor(hash).get(key, hash, loader); // 计算key所在的segment
 ````
 
+LocalCache$segment方法
 ````
-// LocalCache$segment
+// 
 V get(K key, int hash, CacheLoader<? super K, V> loader) {
 // 前面代码省略
 // 这里关注下，可考虑重写loader的refresh方法，结合refresh时间能够异步刷新cache
@@ -215,7 +217,7 @@ return scheduleRefresh(e, key, hash, value, now, loader);
 return lockedGetOrLoad(key, hash, loader);
 ````
 
-
+LocalCache$segment的lockedGetOrLoad方法
 ````
     ReferenceEntry<K, V> e;
       ValueReference<K, V> valueReference = null;
