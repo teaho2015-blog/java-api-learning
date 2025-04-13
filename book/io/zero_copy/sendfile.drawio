@@ -1,0 +1,77 @@
+<mxfile host="Electron" modified="2025-04-13T16:19:17.554Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.3 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="82OGy-z51SqIjn0rOBE-" version="24.5.3" type="device">
+  <diagram name="第 1 页" id="sOO_piqdQZELsWyx2DRQ">
+    <mxGraphModel dx="1384" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9tZazShA_Wq516RUv2ps-17" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="560" width="430" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="9tZazShA_Wq516RUv2ps-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-3" value="sendfile" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="9tZazShA_Wq516RUv2ps-2" vertex="1" connectable="0">
+          <mxGeometry x="-0.36" y="5" relative="1" as="geometry">
+            <mxPoint x="35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-4" value="应用的缓存空间" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-5" value="用户态" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="460" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="9tZazShA_Wq516RUv2ps-8" target="9tZazShA_Wq516RUv2ps-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="700" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-16" value="DMA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="9tZazShA_Wq516RUv2ps-6" vertex="1" connectable="0">
+          <mxGeometry x="0.2571" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="9tZazShA_Wq516RUv2ps-7" target="9tZazShA_Wq516RUv2ps-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-15" value="拷贝文件描述符" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="9tZazShA_Wq516RUv2ps-12" vertex="1" connectable="0">
+          <mxGeometry x="-0.1857" y="1" relative="1" as="geometry">
+            <mxPoint x="23" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-7" value="页高速缓存（Page cache）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="585" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-8" value="磁盘空间" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="710" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-9" value="硬件" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="725" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-10" value="内核态" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="597.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="9tZazShA_Wq516RUv2ps-7" target="9tZazShA_Wq516RUv2ps-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="626" />
+              <mxPoint x="510" y="670" />
+              <mxPoint x="690" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bOAWK_XPEXdlHcEAedSe-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="9tZazShA_Wq516RUv2ps-11" target="9tZazShA_Wq516RUv2ps-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-11" value="Socket Cache" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="585" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="9tZazShA_Wq516RUv2ps-13" value="网卡端" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="710" width="120" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

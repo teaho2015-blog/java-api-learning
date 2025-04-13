@@ -1,0 +1,66 @@
+<mxfile host="Electron" modified="2025-04-13T10:43:54.202Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.3 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="Rw3s8zA8Plp9wd21Laon" version="24.5.3" type="device">
+  <diagram name="第 1 页" id="L__ulZPQL0ILmOvTm5CG">
+    <mxGraphModel dx="1384" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JLI_kJitthGdk8XXYec--9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="JLI_kJitthGdk8XXYec--5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="500" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="430" y="501" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--10" value="read系统调用" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JLI_kJitthGdk8XXYec--9">
+          <mxGeometry x="-0.36" y="5" relative="1" as="geometry">
+            <mxPoint x="35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.829;exitY=1.055;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="JLI_kJitthGdk8XXYec--2" target="JLI_kJitthGdk8XXYec--13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--15" value="write系统调用" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JLI_kJitthGdk8XXYec--14">
+          <mxGeometry x="0.0627" y="-2" relative="1" as="geometry">
+            <mxPoint x="42" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--2" value="应用的内存缓冲区" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="445" width="350" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--3" value="用户态" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="460" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;" edge="1" parent="1" source="JLI_kJitthGdk8XXYec--5" target="JLI_kJitthGdk8XXYec--6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--12" value="读取" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JLI_kJitthGdk8XXYec--11">
+          <mxGeometry x="-0.0857" y="2" relative="1" as="geometry">
+            <mxPoint x="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--5" value="页高速缓存（Page cache）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="585" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--6" value="磁盘空间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="710" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--7" value="硬件" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="725" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--8" value="内核态" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="597.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="JLI_kJitthGdk8XXYec--13" target="JLI_kJitthGdk8XXYec--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--13" value="Socket Cache" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="585" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="JLI_kJitthGdk8XXYec--16" value="网卡（或其他硬件）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="710" width="120" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

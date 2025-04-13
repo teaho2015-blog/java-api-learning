@@ -1,0 +1,62 @@
+<mxfile host="Electron" modified="2025-04-13T16:38:27.870Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.3 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="t6Vzq9qvaXqgYnUBicUC" version="24.5.3" type="device">
+  <diagram name="第 1 页" id="K1Sj-yQnrLiX4dnMrBLr">
+    <mxGraphModel dx="1384" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vFuyVcAWEbwmMAilC16b-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="vFuyVcAWEbwmMAilC16b-4" edge="1" target="vFuyVcAWEbwmMAilC16b-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-3" value="mmap" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="vFuyVcAWEbwmMAilC16b-2" vertex="1" connectable="0">
+          <mxGeometry x="-0.36" y="5" relative="1" as="geometry">
+            <mxPoint x="19" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-4" value="应用的缓存空间" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-5" value="用户态" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="vFuyVcAWEbwmMAilC16b-11" target="vFuyVcAWEbwmMAilC16b-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="490" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-7" value="DMA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="vFuyVcAWEbwmMAilC16b-6" vertex="1" connectable="0">
+          <mxGeometry x="0.2571" y="-4" relative="1" as="geometry">
+            <mxPoint x="16" y="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_-R1vukn2oTAUmUqnmtw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vFuyVcAWEbwmMAilC16b-10" target="_-R1vukn2oTAUmUqnmtw-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="402.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-10" value="页高速缓存（Page cache）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="375" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-11" value="磁盘空间" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-12" value="硬件" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="515" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vFuyVcAWEbwmMAilC16b-13" value="内核态" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="387.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-R1vukn2oTAUmUqnmtw-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_-R1vukn2oTAUmUqnmtw-2" target="_-R1vukn2oTAUmUqnmtw-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_-R1vukn2oTAUmUqnmtw-2" value="Socket Cache" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="372.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_-R1vukn2oTAUmUqnmtw-3" value="网卡" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
