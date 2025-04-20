@@ -9,6 +9,7 @@
     * [jmap](book/tools/jmap.md)
     * [jhat](book/tools/jhat.md)
     * [jstat](book/tools/jstat.md)
+    * [linux命令定位性能问题](book/tools/linux-troubleshot.md)
 * Java相关
     * [monitor](book/language/monitor.md)
     * [JVM的运行时数据区域](book/language/jvm-memory-structure.md)
